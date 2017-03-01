@@ -11,10 +11,11 @@ import (
 	"github.com/gorilla/mux"
 )
 
+//Handlers well, it's the router, my friend.
 func Handlers() *mux.Router {
 	r := mux.NewRouter()
 
-	r.HandleFunc("/", parseMsgHandler).Methods("POST")
+	r.HandleFunc("/", parseMsgHandler).Methods("POST") //there is just one endpoint!
 
 	return r
 }

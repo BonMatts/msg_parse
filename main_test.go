@@ -52,7 +52,7 @@ func TestParseMsg(t *testing.T) {
 	}
 
 	//all three
-
+	//totally doesn't pass. For reasons involving interpolation that I didn't have time to get to
 	c := unmarshRes(sendReq("@bob @john (success) such a cool feature; https://twitter.com/jdorfman/status/430511497475670016", t))
 	lk := lnk{URL: "https://twitter.com/jdorfman/status/430511497475670016", Title: `Justin Dorfman on Twitter: &quot;nice @littlebigdetail from @HipChat (shows hex colors when pasted in chat). http://t.co/7cI6Gjy5pq&quot;`}
 	r := resp{
@@ -99,21 +99,3 @@ func unmarshRes(res *http.Response) resp {
 
 	return b
 }
-
-//Input: "@bob @john (success) such a cool feature; https://twitter.com/jdorfman/status/430511497475670016"
-//Return:
-//{
-//"mentions": [
-//"bob",
-//"john"
-//],
-//"emoticons": [
-//"success"
-//],
-//"links": [
-//{
-//"url": "https://twitter.com/jdorfman/status/430511497475670016",
-//"title": "Justin Dorfman on Twitter: &quot;nice @littlebigdetail from @HipChat (shows hex colors when pasted in chat). http://t.co/7cI6Gjy5pq&quot;"
-//}
-//]
-//}
