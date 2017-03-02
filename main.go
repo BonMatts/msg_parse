@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	fmt.Println("Server starting")
+	fmt.Println("Server starting; listening on port 3000")
 	http.ListenAndServe(":3000", Handlers())
 }

@@ -1,12 +1,10 @@
 package main
 
 import (
-	"fmt"
-	"net/http"
-
 	"encoding/json"
-
+	"fmt"
 	"io/ioutil"
+	"net/http"
 
 	"github.com/gorilla/mux"
 )

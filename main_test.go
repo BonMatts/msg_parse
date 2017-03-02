@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
+	//"net/http/httputil"
 	"reflect"
 	"testing"
 )
@@ -30,6 +31,8 @@ func init() {
 }
 
 func TestParseMsg(t *testing.T) {
+	//I used reflect.DeepEqual to compare slices(and structs) for this reason: http://stackoverflow.com/a/15312182/5831076
+
 	//just mentions
 	m := unmarshRes(sendReq("@chris you around?", t))
 
@@ -81,6 +84,7 @@ func sendReq(input string, t *testing.T) *http.Response {
 	//	fmt.Println(err)
 	//}
 	//fmt.Println(string(responseDump))
+
 	return res
 }
 
